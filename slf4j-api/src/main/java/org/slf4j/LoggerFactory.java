@@ -149,8 +149,8 @@ public final class LoggerFactory {
             }
             //https://juejin.cn/post/7098185851347140639
             // 在源码里是存在这个类的，所以可以编译通过，在compile之后删除了impl
-            // 但是那class里存在多个StaticLoggerBinder类，涉及到同名类需要整理class加载顺序，但是最终只会有一个类
-            //据官网所说，修改为了provider接口
+            // 但是那class里理论存在多个StaticLoggerBinder类，涉及到同名类需要整理class加载顺序，所以最终只会有一个类
+            //经验证，2.0版本(1.8以后都是)已经修改为了provider接口，另外下面这个绑定其实就是通过触发了一次实例化，真正返回工厂是getLoggerFactory，触发实例化的时候或直接或顺便的实例了工厂
             //Q&A 2023/5/20
             // Q: 研究同名类加载机制，这个和之前企微合并项目同名类一样的问题
             // A:
