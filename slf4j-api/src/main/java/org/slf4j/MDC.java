@@ -158,7 +158,7 @@ public class MDC {
      * <p>
      * This method return a <code>Closeable</code> object who can remove <code>key</code> when
      * <code>close</code> is called.
-     *
+     *  可以用在try里自动关闭
      * <p>
      * Useful with Java 7 for example :
      * <code>
